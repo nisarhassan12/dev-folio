@@ -1,0 +1,167 @@
+/* ---------------------------------- */
+/* ----- Variables ----- */
+/* ---------------------------------- */
+
+:root {
+    --grid-max-width: 1140px;
+
+    --font-size-default: 1.9rem;
+
+
+    --gutter-large: 10rem;
+    --gutter-medium: 6rem;
+    --gutter-normal: 4rem;
+    --gutter-small: 3rem;
+    --gutter-small-0: 2.5rem;
+    --gutter-small-1: 2rem;
+    --gutter-small-3: 1.5rem;
+}
+
+/* ---------------------------------- */
+/* ----- Basic Setup ----- */
+/* ---------------------------------- */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    font-size: var(--font-size-default);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.row {
+    max-width: var(--grid-max-width);
+    margin: 0 auto;
+    width: 90%;
+}
+
+section {
+    padding: var(--gutter-large) 0;
+}
+
+/* ---------------------------------- */
+/* ----- Links & Buttons ----- */
+/* ---------------------------------- */
+
+
+/* ---------------------------------- */
+/* ----- Navigation ----- */
+/* ---------------------------------- */
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--gutter-normal);
+}
+
+.nav__link {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav__link:not(:last-child) {
+    margin-right: var(--gutter-medium);
+}
+
+
+/* ---------------------------------- */
+/* ----- Header ----- */
+/* ---------------------------------- */
+
+.header {
+    position: relative;
+    height: 100vh;
+}
+
+.header__text-box {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/* ---------------------------------- */
+/* ----- Work ----- */
+/* ---------------------------------- */
+
+.work__box {
+    display: flex;
+    align-items: center;
+}
+
+@media(max-width: 900px) {
+    .work__box {
+        align-items: initial;
+        flex-direction: column-reverse;
+    }
+}
+
+.work__box:not(:last-child) {
+    margin-bottom: 25rem;
+}
+
+@media(max-width: 500px) {
+    .work__box:not(:last-child) {
+        margin-bottom: 20rem;
+    }
+}
+
+.work__links {
+    display: flex;
+    align-items: center;
+}
+
+.work__text {
+    flex: 0 0 30%;
+}
+
+.work__list {
+    /* list-style-type: square; */
+    list-style-position: inside;
+    margin-bottom: var(--gutter-normal);
+}
+
+.work__code {
+    display: block;
+    height: 3rem;
+    margin-left: var(--gutter-normal);
+    transition: all .3s;
+}
+
+.work__code:hover {
+    transform: scale(1.2);
+}
+
+.work__image-box {
+    margin-bottom: var(--gutter-normal);
+}
+
+.work__image {
+    width: 100%;
+}
+
+@media(min-width: 901px) {
+    .work__image-box {
+        flex: 1;
+        margin: 0 0 0 10rem;
+    }
+}
+
+@media(max-width: 900px) {
+    .work__code {
+        height: 4rem;
+    }
+}
